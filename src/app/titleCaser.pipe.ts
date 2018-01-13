@@ -10,7 +10,6 @@ export class TitleCaser implements PipeTransform {
             return null;
         }
 
-        const prepositions = ['of', 'Of', 'then', 'over', 'through', 'with', 'at', 'plus', 'after', 'on', 'for', 'from', 'the', 'The'];
         let words = value.split(' ');
 
         let wordsToReturn = '';
@@ -18,9 +17,7 @@ export class TitleCaser implements PipeTransform {
         if (words.length > 1) {
             words.forEach((word, index) => {
                 word = word.toLowerCase();
-                if (prepositions.find(function(element) {
-                    return word == element;
-                  })) {
+                if (this.isPreposition(word)) {
                     if (index == 0) {
                         wordsToReturn += word.charAt(0).toUpperCase() + word.substr(1) + ' ';
                     } else {
@@ -35,4 +32,10 @@ export class TitleCaser implements PipeTransform {
             return words.join('').charAt(0).toUpperCase() + words.join('').substr(1);
         }
     }
-}
+
+    isPreposition(word) {
+        const prepositions = ['of', 'Of', 'then', 'over', 'through', 'with', 'at', 'plus', 'after', 'on', 'for', 'from', 'the', 'The'];
+        return prepositions.includes(word);
+    }    // isPreposition
+
+}    // TitleCaser
