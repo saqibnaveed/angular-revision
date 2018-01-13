@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 // import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './favorite.component.html',
   styleUrls: ['./favorite.component.css'],
   // inputs: ['isFavorite']  // another way to mark input properties, not the better approach
+  encapsulation: ViewEncapsulation.Emulated  // Emulated means angular emulates shadow dom for this component
 })
 export class FavoriteComponent implements OnInit {
 
