@@ -12,7 +12,7 @@ export class FavoriteComponent implements OnInit {
   @Input('is-favorite') isFavorite = false;  // now we have marked this as an input (input property)
                                   // and it can be exposed to outside. It is also optionally set with an alias
   // isFavorite = false;
-  @Output() change = new EventEmitter();  // output property
+  @Output('change') change = new EventEmitter();  // output property
   constructor() { }
 
   ngOnInit() {
@@ -20,6 +20,12 @@ export class FavoriteComponent implements OnInit {
 
   onClick() {
     this.isFavorite = !this.isFavorite;
-    this.change.emit(this.isFavorite);
+    this.change.emit({
+      newvalue: this.isFavorite
+    });
   }
+}
+
+export interface FavoriteChangeEventArgs {
+  newValue: boolean;
 }
