@@ -13,6 +13,8 @@ import { CourseComponent } from './course/course.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { InputPrinterComponent } from './input-printer/input-printer.component';
+import { PanelComponent } from './panel/panel.component';
+import { LikeComponent } from './like/like.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { InputPrinterComponent } from './input-printer/input-printer.component';
     SummaryPipe,
     TitleCaser,
     FavoriteComponent,
-    InputPrinterComponent
+    InputPrinterComponent,
+    PanelComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,
