@@ -1,17 +1,13 @@
-.glyphicon {
-    cursor: pointer;
-}
-
-
 span {
     font-size: 1.8em;
     margin-left: 0.2em;
 }
 
-.glyphicon-heart-empty {
+.glyphicon {
+    cursor: pointer;
     color: #ccc;
 }
 
-.glyphicon-heart {
+.highlighted {
     color: deeppink;
 }

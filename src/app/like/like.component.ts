@@ -16,13 +16,8 @@ export class LikeComponent implements OnInit {
   }
 
   onClick() {
-    console.log('On click called.');
+    this.likesCount += (this.isLiked) ? (this.likesCount > 0 ? -1 : 0) : 1;
     this.isLiked = !this.isLiked;
-    if (this.isLiked) {
-      this.likesCount++;
-    } else {
-      this.likesCount--;
-    }
     // emit event
     this.likeChange.emit({
       isLiked: this.isLiked,
