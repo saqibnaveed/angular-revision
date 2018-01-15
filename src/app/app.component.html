@@ -17,8 +17,18 @@
     </div>
 </app-bootstrap-panel> -->
 
-<app-like
+<!-- <app-like
     [likesCount] = "tweet.likesCount"
     [isLiked] = "tweet.isLiked"
     (likeChange) = "OnLikeChangeCalled($event)"
-></app-like>
+></app-like> -->
+
+<div *ngIf="courses.length > 0">
+    List of Courses:
+    <ul>
+        <li *ngFor="let course of courses">{{ course }}</li>
+    </ul>
+</div>
+<div *ngIf="courses.length == 0">
+    No courses avaiable yet.
+</div>
