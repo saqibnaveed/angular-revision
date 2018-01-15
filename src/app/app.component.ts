@@ -12,19 +12,19 @@ export class AppComponent {
   post = {
     title: 'Title',
     isFavorite: true
-  };
+  };  // for favorite component
 
   tweet = {
     body: 'Body of the tweet...',
     isLiked: false,
     likesCount: 0
-  };
+  };  // for like component
 
   onFavoriteChanged(eventArgs: FavoriteChangeEventArgs) {
     console.log('Favorite changed: ', eventArgs);
-  }
+  }  // handle change event from favorite component
 
   OnLikeChangeCalled(eventArgs) {
     console.log('Like changed: ', eventArgs);
-  }
+  }  // handle change event from like component
 }
