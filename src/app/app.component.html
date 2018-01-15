@@ -23,12 +23,15 @@
     (likeChange) = "OnLikeChangeCalled($event)"
 ></app-like> -->
 
-<div *ngIf="courses.length > 0">
+<!-- updated with else which is angular 4+ syntax -->
+<div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+
+<ng-template #coursesList>
     List of Courses:
     <ul>
         <li *ngFor="let course of courses">{{ course }}</li>
     </ul>
-</div>
-<div *ngIf="courses.length == 0">
+</ng-template>
+<ng-template #noCourses>
     No courses avaiable yet.
-</div>
+</ng-template>
