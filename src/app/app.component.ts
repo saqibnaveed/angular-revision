@@ -9,7 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular app';
 
-  courses = [1,2];
+  // courses = [];  // for ngIf
+
+  courses = []; // for ngFor
 
   post = {
     title: 'Title',
@@ -22,6 +24,8 @@ export class AppComponent {
     likesCount: 0
   };  // for like component
 
+  viewMode = 'map'; // for ngSwitchCase
+
   onFavoriteChanged(eventArgs: FavoriteChangeEventArgs) {
     console.log('Favorite changed: ', eventArgs);
   }  // handle change event from favorite component
@@ -29,4 +33,29 @@ export class AppComponent {
   OnLikeChangeCalled(eventArgs) {
     console.log('Like changed: ', eventArgs);
   }  // handle change event from like component
+
+  onAdd() {
+    this.courses.push({
+      id: 4,
+      name: 'Course 4'
+    });
+  }  // onAdd, method for testing ngFor
+
+  onChange(course) {
+    // let index = this.courses.indexOf(course);
+    // this.courses.splice(index, 1);
+    course.name = 'Updated';
+  } // onChange(course), for testing ngFor
+
+  loadCourses() {
+    this.courses = [
+      { id: 1, name: 'course1'},
+      { id: 2, name: 'course2'},
+      { id: 3, name: 'course3'}
+    ];
+  }  // loadCourses(), for testing ngFor
+
+  trackCourse(index, course) {
+    return course ? course.id : undefined;
+  }  // trackCourse, for ngFor
 }
