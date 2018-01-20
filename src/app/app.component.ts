@@ -26,6 +26,15 @@ export class AppComponent {
 
   viewMode = 'map'; // for ngSwitchCase
 
+  canSave = true; // for ngStyle
+
+  task = {
+    title: 'Review Applications',
+    assignee: {
+      name: 'John Smith'
+    }
+  };  // for safe traversal operator
+
   onFavoriteChanged(eventArgs: FavoriteChangeEventArgs) {
     console.log('Favorite changed: ', eventArgs);
   }  // handle change event from favorite component

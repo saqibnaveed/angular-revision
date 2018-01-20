@@ -1,7 +1,7 @@
 <h1>Angular</h1>
 <!-- <app-authors></app-authors> -->
 
-<!-- <favorite [is-favorite] = "post.isFavorite" (change)="onFavoriteChanged($event)"></favorite> -->
+<!-- <favorite [is-favorite] = "post.isFavori   te" (change)="onFavoriteChanged($event)"></favorite> -->
 
 <!-- <favorite></favorite> -->
 
@@ -60,13 +60,36 @@
 </div> -->
 
 <!-- using ngFor -->
-<button (click)="onAdd()">Add</button>
+<!-- <button (click)="onAdd()">Add</button>
 <button (click)="loadCourses()">Load Courses</button>
-<ul>
+<ul> -->
     <!-- using trackBy to override angular object tracking for rendering from memory to given condition -->
     <!-- Note: trackBy is better to be used for large lists where performance is crucial -->
-    <li *ngFor="let course of courses; index as i; even as isEven; trackBy: trackCourse()">
+    <!-- <li *ngFor="let course of courses; index as i; even as isEven; trackBy: trackCourse()">
         {{i}} - {{ course.name }} <span *ngIf="isEven">(EVEN)</span>
         <button (click)="onChange(course)">Update</button>
     </li>
-</ul>
+</ul> -->
+
+
+<!-- For ngStyle -->
+<!-- <button
+    [style.backgroundColor]="canSave ? 'blue' : 'gray'"
+    [style.color] = "canSave ? 'white' : 'black'"
+    [style.fontWeight] = "canSave ? 'bold' : 'normal'"
+>
+    Save
+</button> -->
+
+<!-- <button
+[ngStyle] = "{
+    'backgroundColor': canSave ? 'blue' : 'gray',
+    'color': canSave ? 'white': 'black',
+    'fontWeight': canSave ? 'bold': 'normal'
+}"
+>
+Save
+</button> -->
+
+<!-- for safe traversal operator -->
+<span>{{ task.assignee?.name }}</span>
