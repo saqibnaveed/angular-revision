@@ -1,0 +1,16 @@
+<div class="zippy panel panel-default">
+  <div class="zippy-title panel-heading" (click)="toggle()">
+    {{ title }}
+    <span 
+      class="glyphicon"
+      [ngClass] = "{
+        'glyphicon-menu-down' : !contentVisibility,
+        'glyphicon-menu-up' : contentVisibility
+      }"
+    ></span>
+  </div>
+
+    <div class="zippy-content panel-body" *ngIf="contentVisibility">
+      <ng-content></ng-content>
+    </div>
+</div>
