@@ -7,6 +7,7 @@ import { CoursesComponent } from './courses.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { NewCourseForm2Component } from './new-course-form-2/new-course-form-2.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
@@ -42,12 +44,14 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     NewCourseFormComponent,
     SignupFormComponent,
     NewCourseForm2Component,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     CoursesService,
