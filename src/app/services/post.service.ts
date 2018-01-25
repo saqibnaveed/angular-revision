@@ -3,8 +3,9 @@ import { NotFoundError } from './../common/not-found.error';
 import { AppError } from './../common/app-errors';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class PostService {
