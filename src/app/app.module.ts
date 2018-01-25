@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { TitleCaser } from './titleCaser.pipe';
 import { SummaryPipe } from './summary.pipe';
@@ -55,7 +56,8 @@ import { PostComponent } from './post/post.component';
   ],
   providers: [
     CoursesService,
-    AuthorsService
+    AuthorsService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
